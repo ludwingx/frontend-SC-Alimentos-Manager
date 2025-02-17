@@ -3,24 +3,17 @@
 import * as React from "react"
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-  LayoutDashboard,
   BriefcaseBusiness,
-  CircleDashed
+  Command,
+  GalleryVerticalEnd,
+  LayoutDashboard,
+  Package,
+  Settings2,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
+
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -28,19 +21,19 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
-
+import Image from 'next/image'
 // This is sample data.
 const data = {
   user: {
     name: "shadcn",
-    email: "m@example.com",
-    avatar: "/shadcn.png",
+    role: "Administrador",
+    avatar: "/avatars/shadcn.jpg",
   },
   teams: [
     {
-      name: "Mil Sabores",
+      name: "Acme Inc",
       logo: GalleryVerticalEnd,
-      plan: "Santa Cruz Alimentos",
+      plan: "Enterprise",
     },
     {
       name: "Acme Corp.",
@@ -50,100 +43,67 @@ const data = {
     {
       name: "Evil Corp.",
       logo: Command,
-      plan: "Free",
+      plan: "Free"
     },
   ],
-  // navMain: [
-  //   {
-  //     title: "Negocios",
-  //     url: "#",
-  //     icon: SquareTerminal,
-  //     isActive: true,
-  //   },
-  //   {
-  //     title: "Models",
-  //     url: "#",
-  //     icon: Bot,
-  //     items: [
-  //       {
-  //         title: "Genesis",
-  //         url: "#",
-  //       },
-  //       {
-  //         title: "Explorer",
-  //         url: "#",
-  //       },
-  //       {
-  //         title: "Quantum",
-  //         url: "#",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: "Documentation",
-  //     url: "#",
-  //     icon: BookOpen,
-
-  //   },
-
-  //   {
-  //     title: "Settings",
-  //     url: "#",
-  //     icon: Settings2,
-  //     items: [
-  //       {
-  //         title: "General",
-  //         url: "#",
-  //       },
-  //       {
-  //         title: "Team",
-  //         url: "#",
-  //       },
-  //       {
-  //         title: "Billing",
-  //         url: "#",
-  //       },
-  //       {
-  //         title: "Limits",
-  //         url: "#",
-  //       },
-  //     ],
-  //   },
-  // ],
-  projects: [
+  navMain: [
     {
-      name: "Panel de Control",
-      url: "/dashboard",
+      title: "Panel de Control",
+      url: "/",
       icon: LayoutDashboard,
+      isActive: true,
     },
     {
-      name: "Negocios",
+      title: "Negocios",
       url: "/business",
-      icon: BriefcaseBusiness ,
+      icon: BriefcaseBusiness,
     },
-
     {
-      name: "Productos",
-      url: "#",
-      icon: CircleDashed ,
+      title: "Productos",
+      url: "/products",
+      icon: Package,
+
     },
-  ],
+    {
+      title: "Settings",
+      url: "#",
+      icon: Settings2,
+      items: [
+        {
+          title: "General",
+          url: "#",
+        },
+        {
+          title: "Team",
+          url: "#",
+        },
+        {
+          title: "Billing",
+          url: "#",
+        },
+        {
+          title: "Limits",
+          url: "#",
+        },
+      ],
+    },
+  ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <img src="/SCZ-Alimentos-Logo.svg" alt="Logo" />
       </SidebarHeader>
       <SidebarContent>
-        {/* <NavMain items={data.navMain} /> */}
-        <NavProjects projects={data.projects} />
+        <NavMain items={data.navMain} />
+        {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

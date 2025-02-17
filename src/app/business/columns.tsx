@@ -23,14 +23,14 @@ export const columns: ColumnDef<Business>[] = [
     {
       id: "actions",
       header: () => <div className="text-center">Acciones</div>, // Centrar el header
-      cell: ({ row }) => {
-        const business = row.original;
+      cell: ({  }) => {
+        // const business = row.original;
 
-        function handleDelete(id: string): void {
+        function handleDelete( ): void {
           throw new Error("Function not implemented.")
         }
 
-        function handleEdit(id: string): void {
+        function handleEdit(): void {
           throw new Error("Function not implemented.")
         }
 
@@ -39,14 +39,14 @@ export const columns: ColumnDef<Business>[] = [
             <Button
               variant="outline"
               size="sm"
-              onClick={() => handleEdit(business.id)} className="bg-blue-500 text-white hover:bg-blue-600 hover:text-white"
+              onClick={() => handleEdit()} className="bg-blue-500 text-white hover:bg-blue-600 hover:text-white"
             >
               Editar
             </Button>
             <Button
               variant="destructive"
               size="sm"
-              onClick={() => handleDelete(business.id)}
+              onClick={() => handleDelete()}
             >
               Eliminar
             </Button>
