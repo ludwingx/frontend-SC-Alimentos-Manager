@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import ImageComponent from "./img-component";
 
 export function LoginForm({
   className,
@@ -65,13 +64,11 @@ export function LoginForm({
             </div>
           </form>
           <div className="hidden md:flex items-center justify-center bg-gray-100">
-            <ImageComponent
+            <img
               src="/SCZ-Alimentos-Logo.svg" // Ruta de la imagen (puede ser local o remota)
               alt="Logo de Santa Cruz Alimentos"
               width={240}
               height={180}
-              priority // Prioriza la carga de esta imagen
-              className="p-4" // Agrega un padding para que la imagen no esté pegada a los bordes
             />
           </div>
         </CardContent>

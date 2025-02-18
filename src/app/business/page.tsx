@@ -1,3 +1,4 @@
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Business, columns } from "./columns";
 import { DataTable } from "./data-table";
 import {
@@ -29,11 +30,12 @@ export default async function Page() {
 
   return (
     <div>
-      {/* Titulo */}
-      <div className="Container flex flex-col gap-2 pl-10">
+      {/* Header */}
+      <div className="Container_Header flex flex-col gap-2 pl-10">
         <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0">
           Negocios
         </h2>
+        <Breadcrumb  ></Breadcrumb>
       </div>
       {/* texto a la izquierda y boton a la derecha */}
       <div className="flex items-center justify-between">
