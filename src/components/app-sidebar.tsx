@@ -27,7 +27,7 @@ const data = {
   user: {
     name: "shadcn",
     role: "Administrador",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/vercel.svg",
   },
   teams: [
     {
